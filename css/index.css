@@ -35,6 +35,10 @@ ul {
   list-style: none;
 }
 
+.section__1 {
+  min-height: 100vh;
+}
+
 .section__2 {
   display: flex;
   align-items: center;
@@ -84,6 +88,15 @@ ul {
   background-color: skyblue;
 }
 
+.section__3 .heading {
+  position: relative;
+  z-index: 1;
+  font-size: 106px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  line-height: 0.9em;
+}
+
 .section__3__bg {
   height: 150%;
   width: 150%;
@@ -93,4 +106,108 @@ ul {
   left: 0%;
   transform: translate(0%, 0%) rotate(20deg);
   transform-origin: 0% 0%;
+}
+
+/*  */
+
+.section__4 {
+  background-color: black;
+}
+
+.menu {
+  min-height: 300vh;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.menu__item {
+  position: relative;
+  padding: 0 6vw;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0, 0, 0.3, 1);
+  transform-origin: 50% 50%;
+}
+
+.menu__item-link {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  transition: transform 0.25s, opacity 1s;
+  will-change: transform;
+  transform-origin: 100% 50%;
+  opacity: 1;
+}
+
+.menu__item-link.active {
+  opacity: 0.5;
+}
+
+/* .menu__item-link::before {
+  all: initial;
+  font-family: sofia-pro, sans-serif;
+  counter-increment: menu;
+  position: absolute;
+  bottom: 60%;
+  left: 0;
+  pointer-events: none;
+} */
+
+.menu__item-img {
+  pointer-events: none;
+  position: absolute;
+  height: 50vh;
+  max-height: 400px;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -30%, 0) translate3d(0, 20px, 0);
+}
+
+.menu__item-link:hover + .menu__item-img {
+  opacity: 1;
+  transform: translate3d(-50%, -30%, 0) rotate3d(0, 0, 1, 4deg);
+  transition: all 0.4s;
+}
+
+.menu {
+  font-size: 7vw;
+}
+
+.marquee {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  pointer-events: none;
+}
+
+.marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.menu__item-link:hover ~ .marquee .marquee__inner {
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+/* .menu__item:hover ~ .menu__item {
+  opacity: 0.5;
+} */
+
+.menu__item-link,
+.marquee span {
+  white-space: nowrap;
+  font-size: 7vw;
+  padding: 0 1vw;
+  font-weight: 900;
+  line-height: 1.15;
 }

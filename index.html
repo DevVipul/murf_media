@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"
+      defer
+    ></script>
+    <script src="js/index.js" defer></script>
   </head>
   <body>
-    <main>
+    <main class="scrollContainer">
+      <section class="section__1"></section>
       <section class="section__2">
         <h3 class="small__heading">SMALL AND CRAFTY</h3>
         <div class="small__heading__ribbon"></div>
@@ -22,7 +42,65 @@
       </section>
 
       <section class="section__3">
+        <div>
+          <div>
+            <h2 class="heading">
+              Recent <br />
+              Work
+            </h2>
+          </div>
+        </div>
         <div class="section__3__bg"></div>
+      </section>
+
+      <section class="section__4">
+        <nav class="menu">
+          <div class="menu__item">
+            <a class="menu__item-link">Asterisks</a>
+            <img class="menu__item-img" src="img/img-one.jpg" />
+            <div class="marquee">
+              <div class="marquee__inner">
+                <span>Asterisks</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Unlocked</a>
+            <img class="menu__item-img" src="img/img-two.jpg" />
+            <div class="marquee">
+              <div class="marquee__inner">
+                <span>Unlocked</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Offbeat Radio</a>
+            <img class="menu__item-img" src="img/img-three.jpg" />
+            <div class="marquee">
+              <div class="marquee__inner">
+                <span>Offbeat Radio</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Brutal</a>
+            <img class="menu__item-img" src="img/img-four.jpg" />
+            <div class="marquee">
+              <div class="marquee__inner">
+                <span>Brutal</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item" id="gsap__element">
+            <a class="menu__item-link">The Crew</a>
+            <img class="menu__item-img" src="img/img-five.jpg" />
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>The Crew</span>
+              </div>
+            </div>
+          </div>
+        </nav>
       </section>
     </main>
   </body>
