@@ -19,12 +19,11 @@ function mOut() {
 
 const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
-console.log(clamp(-100, -25, 25));
-
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".scrollContainer"),
   smooth: true,
   getSpeed: true,
+  smoothMobile: true,
 });
 
 const contents = document.querySelectorAll(".menu__item");
@@ -75,6 +74,7 @@ ScrollTrigger.create({
   scroller: ".scrollContainer",
   animation: tl,
   markers: true,
+  scrub: true,
 });
 
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
