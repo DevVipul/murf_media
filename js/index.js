@@ -65,16 +65,79 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
 
 let tl = gsap
   .timeline({ defaults: { ease: "none" } })
-  .to("#gsap__element", { rotation: 360, duration: 3 });
+  .to(".section__3__bg", {
+    rotation: 23,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(".bg__img2", {
+    opacity: 1,
+    x: -500,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(
+    ".bg__img1",
+    {
+      opacity: 1,
+      x: 500,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.50"
+  );
 
 ScrollTrigger.create({
-  trigger: "#gsap__element",
-  start: "50% 50%",
-  end: "+=300",
+  trigger: ".section__3",
+  start: "top 40%",
   scroller: ".scrollContainer",
   animation: tl,
+  // markers: true,
+  toggleActions: "restart none none reverse",
+});
+
+let whiteToBlack = gsap.fromTo(
+  "html",
+  {
+    "--background-color": "white",
+    "--foreground-color": "black",
+  },
+  {
+    "--background-color": "black",
+    "--foreground-color": "white",
+  }
+);
+
+let blackToWhite = gsap.fromTo(
+  "html",
+  {
+    "--background-color": "black",
+    "--foreground-color": "white",
+  },
+  {
+    "--background-color": "white",
+    "--foreground-color": "black",
+  }
+);
+
+ScrollTrigger.create({
+  trigger: ".section__4",
+  start: "70% top",
+  scroller: ".scrollContainer",
   markers: true,
-  scrub: true,
+  scrub: 1,
+  // toggleActions: "restart none none reverse",
+  animation: blackToWhite,
+});
+
+ScrollTrigger.create({
+  trigger: ".img__wrraper",
+  start: "50% top",
+  scroller: ".scrollContainer",
+  // markers: true,
+  scrub: 1,
+  // toggleActions: "restart none none reverse",
+  animation: whiteToBlack,
 });
 
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
@@ -85,3 +148,13 @@ ScrollTrigger.refresh();
 
 //watch the free video on how this demo was made
 // https://www.snorkl.tv/scrolltrigger-smooth-scroll/
+
+// cursor.
+
+document.addEventListener("mousemove", function (e) {
+  gsap.to(".cursor", {
+    x: e.clientX,
+    y: e.clientY,
+    stagger: 0.05,
+  });
+});

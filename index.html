@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Vabby-Media</title>
     <link rel="stylesheet" href="css/index.css" />
     <link
       rel="stylesheet"
@@ -21,12 +21,19 @@
       defer
     ></script>
     <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"
       defer
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="js/index.js" defer></script>
   </head>
   <body>
+    <div class="cursor cursor1"></div>
+    <div class="cursor cursor2"></div>
     <main class="scrollContainer">
       <section class="section__1"></section>
       <section class="section__2">
@@ -39,25 +46,25 @@
           We partner with global brands and emerging businesses to create
           exciting and meaningful experiences, whether digital or non-digital.
         </p>
-      </section>
 
-      <section class="section__3">
-        <div>
-          <div>
-            <h2 class="heading">
-              Recent <br />
-              Work
-            </h2>
-          </div>
+        <div class="img__wrraper">
+          <img
+            src="img/locomotive02.jpg"
+            alt=""
+            data-scroll=""
+            data-scroll-speed="-2"
+            class="img_loco"
+          />
         </div>
-        <div class="section__3__bg"></div>
       </section>
 
       <section class="section__4">
+        <h3 class="small__heading">Our Sevices</h3>
+        <div class="small__heading__ribbon"></div>
         <nav class="menu">
           <div class="menu__item">
             <a class="menu__item-link">Asterisks</a>
-            <img class="menu__item-img" src="img/img-one.jpg" />
+            <img class="menu__item-img" src="img/image-salomon-1.png" />
             <div class="marquee">
               <div class="marquee__inner">
                 <span>Asterisks</span>
@@ -101,6 +108,53 @@
             </div>
           </div>
         </nav>
+      </section>
+
+      <section class="section__3">
+        <div>
+          <div>
+            <h2 class="heading">
+              Recent <br />
+              Work
+            </h2>
+          </div>
+
+          <a href="https://www.google.com/" class="work__cto"
+            ><div class="left">
+              <svg
+                width="21"
+                height="6"
+                viewBox="0 0 21 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5 2V4H14.5V6L20.5 3L14.5 0V2H0.5Z"
+                  fill="var(--background-color)"
+                />
+              </svg>
+            </div>
+            <div class="center">view all work</div>
+            <div class="right">
+              <svg
+                width="21"
+                height="6"
+                viewBox="0 0 21 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5 2V4H14.5V6L20.5 3L14.5 0V2H0.5Z"
+                  fill="var(--foreground-color)"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="section__3__bg">
+          <div class="bg__img bg__img1"></div>
+          <div class="bg__img bg__img2"></div>
+        </div>
       </section>
     </main>
   </body>
