@@ -174,7 +174,7 @@ let tl = gsap
   })
   .to(".bg__img2", {
     opacity: 1,
-    x: -500,
+    x: -600,
     duration: 0.9,
     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
   })
@@ -182,7 +182,7 @@ let tl = gsap
     ".bg__img1",
     {
       opacity: 1,
-      x: 500,
+      x: 600,
       duration: 0.9,
       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     },

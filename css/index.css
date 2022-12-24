@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #48b0ff;
+  --primary-color: #ef3bff;
   --secondary-color: rgb(247 247 247);
   --foreground-color: #212121;
   --background-color: rgb(236, 236, 236);
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "ginger";
-  src: url("../font/Phonk.otf") format("opentype");
+  src: url("../font/ginger-bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -35,7 +35,7 @@ html {
 
 body {
   font-family: "ginger";
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 }
 
 a {
@@ -46,6 +46,13 @@ ul {
   list-style: none;
 }
 
+.saperater {
+  max-width: 90vw;
+  height: 1px;
+  background-color: #212121;
+  margin-inline: auto;
+  opacity: 0.12;
+}
 .cursor2 {
   position: fixed;
   width: 24px;
@@ -125,6 +132,7 @@ ul {
   flex-direction: column;
   overflow: hidden;
   width: 100vw;
+  position: relative;
   /* height: 120vh; */
   background-color: #171717;
   padding-block: 70px;
@@ -219,11 +227,11 @@ ul {
 .section__3 .heading {
   position: relative;
   z-index: 1;
-  font-size: 106px;
+  font-size: 180px;
   text-align: center;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 0.9em;
-  color: var(--primary-color);
+  color: var(--foreground-color);
 }
 
 .section__3 .work__cto {
@@ -320,15 +328,15 @@ ul {
 }
 
 .section__3__bg .bg__img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: var(--primary-color);
   position: relative;
   opacity: 0;
 }
 
 .section__3__bg .bg__img1 {
-  transform: translate(200px, -100px);
+  transform: translate(200px, -200px);
 }
 
 .section__3__bg .bg__img2 {
@@ -506,7 +514,7 @@ ul {
 }
 
 .section__5 {
-  background-color: var(--color1);
+  background-color: var(--secondary-color);
   min-height: 500px;
   display: flex;
   align-items: center;
