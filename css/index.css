@@ -107,7 +107,6 @@ ul {
   top: 0;
   left: 0;
   z-index: 99;
-  transform: translateY(200px);
   background-image: url("../img/e-kosmo.png");
 }
 
@@ -127,10 +126,18 @@ ul {
   overflow: hidden;
   width: 100vw;
   /* height: 120vh; */
-  background-color: var(--foreground-color);
+  background-color: #171717;
   padding-block: 70px;
   color: var(--background-color2);
   isolation: isolate;
+  min-height: 80vh;
+}
+
+.section__2 .sick2 .content__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .section__2 .sick2 video {

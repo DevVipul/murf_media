@@ -71,7 +71,7 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
 //
 //
 
-gsap.to(".sick1", {
+gsap.from(".sick2 .content__section", {
   scrollTrigger: {
     trigger: ".sick2",
     start: "top bottom",
@@ -80,7 +80,21 @@ gsap.to(".sick1", {
     scrub: true,
     // markers: true,
   },
-  y: 0,
+  y: "-100%",
+  opacity: 0.3,
+  ease: "none",
+});
+
+gsap.from(".sick2 video", {
+  scrollTrigger: {
+    trigger: ".sick2",
+    start: "30% bottom",
+    scroller: ".scrollContainer",
+    end: "top center",
+    scrub: true,
+    // markers: true,
+  },
+  opacity: 0,
 });
 
 gsap.to("html", {
@@ -95,61 +109,61 @@ gsap.to("html", {
   "--section4__padding": "0px",
 });
 
-let textrev = gsap.timeline();
+// let textrev = gsap.timeline();
 
-textrev
-  .from(".section__2 .small__heading span", 1.8, {
-    y: 200,
-    ease: "power4.out",
-    skewY: 10,
-    stagger: {
-      amount: 0.4,
-    },
-  })
-  .from(
-    ".section__2 .small__heading__ribbon",
-    {
-      ease: "power4.out",
-      scaleX: 0,
-      duration: 1,
-    },
-    "-=0.70"
-  )
-  .from(
-    ".section__2 h2 div span",
-    1.8,
-    {
-      y: 200,
-      ease: "power4.out",
-      skewY: 10,
-      stagger: {
-        amount: 0.4,
-      },
-    },
-    "-=1"
-  )
-  .from(
-    ".section__2 h4 div span",
-    1.8,
-    {
-      y: 200,
-      ease: "power4.out",
-      skewY: 10,
-      stagger: {
-        amount: 0.4,
-      },
-    },
-    "-=1.7"
-  );
+// textrev
+//   .from(".section__2 .small__heading span", 1.8, {
+//     y: 200,
+//     ease: "power4.out",
+//     skewY: 10,
+//     stagger: {
+//       amount: 0.4,
+//     },
+//   })
+//   .from(
+//     ".section__2 .small__heading__ribbon",
+//     {
+//       ease: "power4.out",
+//       scaleX: 0,
+//       duration: 1,
+//     },
+//     "-=0.70"
+//   )
+//   .from(
+//     ".section__2 h2 div span",
+//     1.8,
+//     {
+//       y: 200,
+//       ease: "power4.out",
+//       skewY: 10,
+//       stagger: {
+//         amount: 0.4,
+//       },
+//     },
+//     "-=1"
+//   )
+//   .from(
+//     ".section__2 h4 div span",
+//     1.8,
+//     {
+//       y: 200,
+//       ease: "power4.out",
+//       skewY: 10,
+//       stagger: {
+//         amount: 0.4,
+//       },
+//     },
+//     "-=1.7"
+//   );
 
-ScrollTrigger.create({
-  trigger: ".small__heading",
-  start: "top 50%",
-  scroller: ".scrollContainer",
-  animation: textrev,
-  // markers: true,
-  toggleActions: "play none none none",
-});
+// ScrollTrigger.create({
+//   trigger: ".small__heading",
+//   start: "top 50%",
+//   scroller: ".scrollContainer",
+//   animation: textrev,
+//   // markers: true,
+//   toggleActions: "play none none none",
+// });
 
 let tl = gsap
   .timeline({ defaults: { ease: "none" } })
