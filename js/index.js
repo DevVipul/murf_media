@@ -1,3 +1,9 @@
+// locoScroll.init();
+// locoScroll.start();
+
+// locoScroll.update();
+// ScrollTrigger.refresh();
+
 var targets = document.querySelectorAll(".menu__item-link");
 
 targets.forEach((target) => {
@@ -61,12 +67,94 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
     : "fixed",
 });
 
-// gsap.set("#bigHand, #smallHand", { svgOrigin: "200 200" });
+//
+//
+//
+
+gsap.to(".sick1", {
+  scrollTrigger: {
+    trigger: ".sick2",
+    start: "top bottom",
+    scroller: ".scrollContainer",
+    end: "top center",
+    scrub: true,
+    // markers: true,
+  },
+  y: 0,
+});
+
+gsap.to("html", {
+  scrollTrigger: {
+    trigger: ".section__4",
+    start: "top center",
+    scroller: ".scrollContainer",
+    end: "+=500",
+    scrub: true,
+    // markers: true,
+  },
+  "--section4__padding": "0px",
+});
+
+let textrev = gsap.timeline();
+
+textrev
+  .from(".section__2 .small__heading span", 1.8, {
+    y: 200,
+    ease: "power4.out",
+    skewY: 10,
+    stagger: {
+      amount: 0.4,
+    },
+  })
+  .from(
+    ".section__2 .small__heading__ribbon",
+    {
+      ease: "power4.out",
+      scaleX: 0,
+      duration: 1,
+    },
+    "-=0.70"
+  )
+  .from(
+    ".section__2 h2 div span",
+    1.8,
+    {
+      y: 200,
+      ease: "power4.out",
+      skewY: 10,
+      stagger: {
+        amount: 0.4,
+      },
+    },
+    "-=1"
+  )
+  .from(
+    ".section__2 h4 div span",
+    1.8,
+    {
+      y: 200,
+      ease: "power4.out",
+      skewY: 10,
+      stagger: {
+        amount: 0.4,
+      },
+    },
+    "-=1.7"
+  );
+
+ScrollTrigger.create({
+  trigger: ".small__heading",
+  start: "top 50%",
+  scroller: ".scrollContainer",
+  animation: textrev,
+  // markers: true,
+  toggleActions: "play none none none",
+});
 
 let tl = gsap
   .timeline({ defaults: { ease: "none" } })
   .to(".section__3__bg", {
-    rotation: 23,
+    rotation: 15,
     duration: 0.9,
     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
   })
@@ -96,49 +184,92 @@ ScrollTrigger.create({
   toggleActions: "restart none none reverse",
 });
 
-let whiteToBlack = gsap.fromTo(
-  "html",
-  {
-    "--background-color": "white",
-    "--foreground-color": "black",
-  },
-  {
-    "--background-color": "black",
-    "--foreground-color": "white",
-  }
-);
-
-let blackToWhite = gsap.fromTo(
-  "html",
-  {
-    "--background-color": "black",
-    "--foreground-color": "white",
-  },
-  {
-    "--background-color": "white",
-    "--foreground-color": "black",
-  }
-);
-
-ScrollTrigger.create({
-  trigger: ".section__4",
-  start: "70% top",
-  scroller: ".scrollContainer",
-  markers: true,
-  scrub: 1,
-  // toggleActions: "restart none none reverse",
-  animation: blackToWhite,
-});
+let tl2 = gsap
+  .timeline({ defaults: { ease: "none" } })
+  .from(".footer__heading", {
+    opacity: 0,
+    y: 500,
+    duration: 0.7,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .from(
+    ".footer__img",
+    {
+      opacity: 0,
+      y: 500,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.906,0 0.16,1 1,1 "),
+    },
+    "-=0.60"
+  )
+  .from(
+    ".footer__links",
+    {
+      opacity: 0,
+      y: 500,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.8"
+  );
 
 ScrollTrigger.create({
-  trigger: ".img__wrraper",
-  start: "50% top",
+  trigger: ".section__5",
+  start: "90% bottom",
+  end: "top bottom",
   scroller: ".scrollContainer",
+  animation: tl2,
   // markers: true,
-  scrub: 1,
-  // toggleActions: "restart none none reverse",
-  animation: whiteToBlack,
+  toggleActions: "restart none none reverse",
 });
+
+// let whiteToBlack = gsap.fromTo(
+//   "html",
+//   {
+//     "--secondary-color": "#f1f5f5",
+//     "--foreground-color": "#212121",
+//     "--background-color": "#fff",
+//   },
+//   {
+//     "--secondary-color": "#1b1b1b",
+//     "--background-color": "#212121",
+//     "--foreground-color": "#fff",
+//   }
+// );
+
+// ScrollTrigger.create({
+//   trigger: ".section__4",
+//   start: "50% bottom",
+//   end: "+=100",
+//   scroller: ".scrollContainer",
+//   // markers: true,
+//   scrub: 1,
+//   // toggleActions: "restart none none reverse",
+//   animation: whiteToBlack,
+// });
+
+// let blackToWhite = gsap.fromTo(
+//   "html",
+//   {
+//     "--background-color": "black",
+//     "--foreground-color": "white",
+//   },
+//   {
+//     "--background-color": "white",
+//     "--foreground-color": "black",
+//   }
+// );
+
+// ScrollTrigger.create({
+//   trigger: ".section__4",
+//   start: "bottom bottom",
+//   end: "bottom bottom",
+//   scroller: ".scrollContainer",
+//   markers: true,
+//   scrub: 1,
+//   // toggleActions: "restart none none reverse",
+//   animation: blackToWhite,
+// });
 
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
