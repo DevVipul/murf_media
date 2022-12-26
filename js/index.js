@@ -30,6 +30,7 @@ const locoScroll = new LocomotiveScroll({
   smooth: true,
   getSpeed: true,
   smoothMobile: true,
+  lerp: 0.06,
 });
 
 const contents = document.querySelectorAll(".menu__item");
@@ -67,35 +68,127 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
     : "fixed",
 });
 
+window.addEventListener("load", (event) => {
+  let intro = gsap
+    .timeline({ defaults: { ease: "none" } })
+    .to(".animate__this1", {
+      y: "0%",
+      scaleY: 1,
+      skewX: "0deg",
+      delay: 0.3,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    })
+    .to(".animate__this1", {
+      y: "-140%",
+      scaleY: 1.5,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    })
+    .to(
+      ".animate__this2",
+      {
+        y: "0%",
+        scaleY: 1,
+        skewX: "0deg",
+        duration: 0.9,
+        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+      },
+      "-=0.9"
+    )
+    .to(
+      ".animate__this2",
+      {
+        y: "-140%",
+        scaleY: 1.5,
+        delay: 1,
+        duration: 0.9,
+        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+      },
+      "-=0.9"
+    )
+    .to(
+      ".animate__this3",
+      {
+        y: "0%",
+        scaleY: 1,
+        skewX: "0deg",
+        duration: 0.9,
+        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+      },
+      "-=0.9"
+    )
+    .to(
+      ".intro",
+      {
+        // y: "-100%",
+        opacity: 0,
+        duration: 0.5,
+        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+      },
+      "+=0.5"
+    )
+    .from(
+      ".section__1 .anim",
+      {
+        y: "100%",
+        opacity: 0,
+        skewX: "-10deg",
+        scaleY: 1.5,
+        stagger: 0.2,
+        duration: 0.9,
+        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+      },
+      "-=0.5"
+    );
+
+  gsap.to("#starter__number", {
+    innerText: 100,
+    duration: 4,
+    snap: {
+      innerText: 1,
+    },
+  });
+});
+
+// ScrollTrigger.create({
+//   trigger: ".section__3",
+//   start: "top 40%",
+//   scroller: ".scrollContainer",
+//   animation: intro,
+//   // markers: true,
+//   toggleActions: "restart none none reverse",
+// });
+
 //
 //
 //
 
-gsap.from(".sick2 .content__section", {
-  scrollTrigger: {
-    trigger: ".sick2",
-    start: "top bottom",
-    scroller: ".scrollContainer",
-    end: "top center",
-    scrub: true,
-    // markers: true,
-  },
-  y: "-100%",
-  opacity: 0.3,
-  ease: "none",
-});
+// gsap.from(".sick2 .content__section", {
+//   scrollTrigger: {
+//     trigger: ".sick2",
+//     start: "top bottom",
+//     scroller: ".scrollContainer",
+//     end: "top center",
+//     scrub: true,
+//     // markers: true,
+//   },
+//   y: "-100%",
+//   opacity: 0.3,
+//   ease: "none",
+// });
 
-gsap.from(".sick2 video", {
-  scrollTrigger: {
-    trigger: ".sick2",
-    start: "30% bottom",
-    scroller: ".scrollContainer",
-    end: "top center",
-    scrub: true,
-    // markers: true,
-  },
-  opacity: 0,
-});
+// gsap.from(".sick2 video", {
+//   scrollTrigger: {
+//     trigger: ".sick2",
+//     start: "30% bottom",
+//     scroller: ".scrollContainer",
+//     end: "top center",
+//     scrub: true,
+//     // markers: true,
+//   },
+//   opacity: 0,
+// });
 
 gsap.to("html", {
   scrollTrigger: {
@@ -165,38 +258,38 @@ gsap.to("html", {
 //   toggleActions: "play none none none",
 // });
 
-let tl = gsap
-  .timeline({ defaults: { ease: "none" } })
-  .to(".section__3__bg", {
-    rotation: 15,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(".bg__img2", {
-    opacity: 1,
-    x: -600,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(
-    ".bg__img1",
-    {
-      opacity: 1,
-      x: 600,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.50"
-  );
+// let tl = gsap
+//   .timeline({ defaults: { ease: "none" } })
+//   .to(".section__3__bg", {
+//     rotation: 15,
+//     duration: 0.9,
+//     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//   })
+//   .to(".bg__img2", {
+//     opacity: 1,
+//     x: -600,
+//     duration: 0.9,
+//     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//   })
+//   .to(
+//     ".bg__img1",
+//     {
+//       opacity: 1,
+//       x: 600,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     },
+//     "-=0.50"
+//   );
 
-ScrollTrigger.create({
-  trigger: ".section__3",
-  start: "top 40%",
-  scroller: ".scrollContainer",
-  animation: tl,
-  // markers: true,
-  toggleActions: "restart none none reverse",
-});
+// ScrollTrigger.create({
+//   trigger: ".section__3",
+//   start: "top 40%",
+//   scroller: ".scrollContainer",
+//   animation: tl,
+//   // markers: true,
+//   toggleActions: "restart none none reverse",
+// });
 
 let tl2 = gsap
   .timeline({ defaults: { ease: "none" } })
@@ -224,7 +317,7 @@ let tl2 = gsap
       duration: 0.9,
       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     },
-    "-=0.8"
+    "-=0.6"
   );
 
 ScrollTrigger.create({
@@ -237,30 +330,30 @@ ScrollTrigger.create({
   toggleActions: "restart none none reverse",
 });
 
-// let whiteToBlack = gsap.fromTo(
-//   "html",
-//   {
-//     "--secondary-color": "#f1f5f5",
-//     "--foreground-color": "#212121",
-//     "--background-color": "#fff",
-//   },
-//   {
-//     "--secondary-color": "#1b1b1b",
-//     "--background-color": "#212121",
-//     "--foreground-color": "#fff",
-//   }
-// );
+let whiteToBlack = gsap.fromTo(
+  "html",
+  {
+    "--color1": "#f7f7f7",
+    "--foreground-color": "#212121",
+    "--background-color": "#fff",
+  },
+  {
+    "--color1": "#000",
+    "--background-color": "#000",
+    "--foreground-color": "#fff",
+  }
+);
 
-// ScrollTrigger.create({
-//   trigger: ".section__4",
-//   start: "50% bottom",
-//   end: "+=100",
-//   scroller: ".scrollContainer",
-//   // markers: true,
-//   scrub: 1,
-//   // toggleActions: "restart none none reverse",
-//   animation: whiteToBlack,
-// });
+ScrollTrigger.create({
+  trigger: ".section__3",
+  start: "top 30%",
+  end: "+=150",
+  scroller: ".scrollContainer",
+  // markers: true,
+  scrub: 1,
+  // toggleActions: "restart none none reverse",
+  animation: whiteToBlack,
+});
 
 // let blackToWhite = gsap.fromTo(
 //   "html",

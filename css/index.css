@@ -1,12 +1,17 @@
 :root {
-  --primary-color: #ef3bff;
+  --primary-color: #ffe600;
   --secondary-color: rgb(247 247 247);
   --foreground-color: #212121;
-  --background-color: rgb(236, 236, 236);
+  --background-color: rgb(255, 255, 255);
   --background-color2: #fff;
-  --color1: #f4f4f4;
+  --color1: #f5f5f5;
   --color2: #212121;
   --section4__padding: 100px;
+}
+
+*::selection {
+  color: #212121;
+  background-color: var(--primary-color);
 }
 
 @font-face {
@@ -35,7 +40,7 @@ html {
 
 body {
   font-family: "ginger";
-  /* background-color: var(--background-color); */
+  background-color: var(--background-color);
 }
 
 a {
@@ -46,13 +51,13 @@ ul {
   list-style: none;
 }
 
-.saperater {
+/* .saperater {
   max-width: 90vw;
   height: 1px;
   background-color: #212121;
   margin-inline: auto;
   opacity: 0.12;
-}
+} */
 .cursor2 {
   position: fixed;
   width: 24px;
@@ -69,8 +74,8 @@ ul {
 
 .cursor1 {
   position: fixed;
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   background-color: var(--primary-color);
   border-radius: 50%;
   left: 0;
@@ -80,41 +85,99 @@ ul {
   z-index: 9999;
 }
 
-.dection.unactive {
-  display: none;
-}
-
-/*  */
-
-.section__1 {
-  /* min-height: 100vh; */
-  /* padding-top: 30vh; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .img__wrraper {
-  overflow: hidden;
-  height: 500px;
-  display: grid;
-  place-content: center;
-  margin-block: 25px;
-}
-
-.img_loco {
-  height: 1000px;
-} */
-
-.sick1 {
-  background-color: red;
-  position: relative;
+.intro {
   width: 100vw;
   height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3vw;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.intro h2 {
+  font-size: 42px;
+  font-weight: lighter;
+  letter-spacing: -1.68px;
+  line-height: 50.4px;
+  text-align: left;
+  margin-bottom: 21px;
+  color: #fff;
+}
+
+.intro .animation__wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.intro .animate__this {
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  transform: translate(0%, 200%) skew(-10deg, 0deg) scale(1, 1.5);
+  transform-origin: 50% 100%;
+}
+
+.intro .animate__this .yellow__it {
+  color: var(--primary-color);
+}
+
+.intro h3 {
+  font-size: 80px;
+  font-weight: lighter;
+  letter-spacing: -1.68px;
+  line-height: 50.4px;
+  max-width: 800px;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  bottom: 3vw;
+  right: 3vw;
+}
+
+.section__1 {
+  color: #fff;
+  position: relative;
+  width: 100vw;
+  height: 120vh;
   top: 0;
   left: 0;
   z-index: 99;
-  background-image: url("../img/e-kosmo.png");
+  background-image: url("../img/humanastudio.jpg");
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  /* padding-bottom: 200px; */
+}
+
+.section__1 .bottom {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-inline: 12px;
+  background-color: #000;
+  padding-bottom: 300px;
+  font-weight: lighter;
+}
+
+.section__1 .left {
+  transform-origin: 50% 100%;
+}
+
+.section__1 .middle {
+  margin-left: 125px;
+  transform-origin: 50% 100%;
+}
+
+.section__1 .right {
+  font-size: 56px;
+  max-width: 58.3333333333%;
+  transform-origin: 50% 100%;
 }
 
 .section__2 {
@@ -126,7 +189,7 @@ ul {
 }
 
 .section__2 .sick2 {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -215,10 +278,10 @@ ul {
 }
 
 .section__3 {
-  height: 100vh;
+  height: 140vh;
   position: relative;
   overflow: hidden;
-  background-color: var(--background-color2);
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,7 +294,7 @@ ul {
   text-align: center;
   letter-spacing: -0.04em;
   line-height: 0.9em;
-  color: var(--foreground-color);
+  color: var(--background-color2);
 }
 
 .section__3 .work__cto {
@@ -243,7 +306,7 @@ ul {
 }
 
 .section__3 .work__cto div {
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color2);
 }
 
 .section__3 .work__cto div.center {
@@ -253,7 +316,7 @@ ul {
   line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  color: var(--foreground-color);
+  color: var(--background-color2);
 }
 
 .section__3 .work__cto div.left,
@@ -268,7 +331,7 @@ ul {
   width: 0px;
   border-right-width: 0px;
   border-left-width: 0px;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color2);
   transition: width 0.5s cubic-bezier(0.7, -0.01, 0, 1.01) 0.05s,
     border-left-width 0.05s linear 0.38s;
 }
@@ -312,6 +375,23 @@ ul {
 .section__3 .work__cto:hover div.left svg {
   transform: translateX(0%);
   transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1) 0.29s;
+}
+
+.section3__video {
+  position: absolute;
+  width: 90%;
+  height: 95%;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #000000;
+  align-self: flex-start;
+}
+
+.section3__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
 }
 
 .section__3__bg {
@@ -359,7 +439,7 @@ ul {
 }
 
 .section__4-wrraper {
-  background-color: var(--background-color2);
+  background-color: var(--background-color);
   /* width: 90%; */
   border-radius: var(--section4__padding);
   /* height: 90%; */
@@ -514,35 +594,50 @@ ul {
 }
 
 .section__5 {
-  background-color: var(--secondary-color);
-  min-height: 500px;
+  background-color: var(--background-color);
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.section__5 p {
-  font-size: 7vw;
-  white-space: nowrap;
-  font-weight: bold;
-  color: var(--background-color2);
+.section__5 .footer__left {
+  color: #fff;
 }
 
-.section__5 > a {
+.section__5 .footer__heading {
+  font-size: 3vw;
+  white-space: nowrap;
+  font-weight: bold;
+  color: var(--color2);
+  background-color: var(--background-color2);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  line-height: 1em;
+}
+
+.section__5 .footer__img_wrapper {
   position: absolute;
-  bottom: 0;
-  z-index: 1;
+  /* bottom: 0; */
+  z-index: -1;
 }
 
 .section__5 img {
   height: 450px;
+  opacity: 0.5;
 }
 
 .section__5 > div {
   min-height: 52.2px;
-  min-width: 100%;
-  background-color: var(--background-color2);
+  min-width: 90%;
+  background-color: var(--background-color);
   position: absolute;
+  border-top: 1px solid #262626;
   bottom: 0;
   display: flex;
   justify-content: space-between;
