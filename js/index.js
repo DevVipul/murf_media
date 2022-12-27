@@ -135,7 +135,7 @@ window.addEventListener("load", (event) => {
         opacity: 0,
         skewX: "-10deg",
         scaleY: 1.5,
-        stagger: 0.2,
+        stagger: 0.12,
         duration: 0.9,
         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
       },
@@ -148,6 +148,7 @@ window.addEventListener("load", (event) => {
     snap: {
       innerText: 1,
     },
+    ease: CustomEase.create("custom", "M0,0,C0,0,0,1,1,1"),
   });
 });
 
@@ -322,7 +323,7 @@ let tl2 = gsap
 
 ScrollTrigger.create({
   trigger: ".section__5",
-  start: "90% bottom",
+  start: "88% bottom",
   end: "top bottom",
   scroller: ".scrollContainer",
   animation: tl2,
@@ -393,6 +394,6 @@ document.addEventListener("mousemove", function (e) {
   gsap.to(".cursor", {
     x: e.clientX,
     y: e.clientY,
-    stagger: 0.05,
+    stagger: 0.06,
   });
 });
