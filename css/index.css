@@ -190,8 +190,8 @@ html.has-scroll-smooth {
 }
 
 .section__1 .top {
-  font-size: 230px;
-  margin-left: 24px;
+  font-size: 250px;
+  margin-left: 60px;
   margin-top: 85px;
   align-self: flex-start;
   justify-self: flex-start;
@@ -247,6 +247,7 @@ html.has-scroll-smooth {
 
   .section__1 .top {
     font-size: 14vw;
+    margin-left: 32px;
   }
 
   .section__1 .right {
@@ -700,6 +701,10 @@ html.has-scroll-smooth {
   text-align: center;
 }
 
+.section__4 .it {
+  padding: 0;
+}
+
 @media only screen and (max-width: 425px) {
   :root {
     --section4__padding: 0px;
@@ -713,11 +718,11 @@ html.has-scroll-smooth {
   .marquee span {
     font-size: 10vw;
     white-space: nowrap;
-    padding: 6vw 0vw;
+    padding: 4vw 0vw;
   }
 
   .section__4 .it {
-    display: block;
+    /* display: block; */
   }
 }
 
