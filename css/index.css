@@ -159,6 +159,10 @@ html.has-scroll-smooth {
   color: var(--primary-color);
 }
 
+.yellow__it.skew {
+  transform: skewX(10deg);
+}
+
 .intro h3 {
   font-size: 72px;
   font-weight: lighter;
@@ -191,12 +195,18 @@ html.has-scroll-smooth {
 
 .section__1 .top {
   font-size: 250px;
-  margin-left: 60px;
+  font-weight: 300;
+  margin-left: 190px;
   margin-top: 85px;
   align-self: flex-start;
   justify-self: flex-start;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
   white-space: nowrap;
+}
+
+.section__1 .top h1 {
+  font-weight: 300;
+  transform: skewX(-10deg);
 }
 
 .section__1 .top span {
@@ -205,9 +215,10 @@ html.has-scroll-smooth {
 }
 
 .section__1 .logo__y {
-  width: 0.53em;
+  width: 0.49em;
   fill: #f3f3f3;
   padding-left: 0.0289em;
+  transform: skewX(-10deg);
 }
 
 .section__1 .bottom {
