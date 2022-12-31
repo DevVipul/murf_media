@@ -71,7 +71,7 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
 window.addEventListener("load", (event) => {
   let intro = gsap
     .timeline({ defaults: { ease: "none" } })
-    .to(".animate__this1", {
+    .to(".intro .animate__this1", {
       y: "0%",
       scaleY: 1,
       skewX: "0deg",
@@ -79,14 +79,14 @@ window.addEventListener("load", (event) => {
       duration: 0.9,
       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     })
-    .to(".animate__this1", {
+    .to(".intro .animate__this1", {
       y: "-140%",
       scaleY: 1.5,
       duration: 0.9,
       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     })
     .to(
-      ".animate__this2",
+      ".intro .animate__this2",
       {
         y: "0%",
         scaleY: 1,
@@ -97,7 +97,7 @@ window.addEventListener("load", (event) => {
       "-=0.9"
     )
     .to(
-      ".animate__this2",
+      ".intro .animate__this2",
       {
         y: "-140%",
         scaleY: 1.5,
@@ -108,7 +108,7 @@ window.addEventListener("load", (event) => {
       "-=0.9"
     )
     .to(
-      ".animate__this3",
+      ".intro .animate__this3",
       {
         y: "0%",
         scaleY: 1,
@@ -152,6 +152,74 @@ window.addEventListener("load", (event) => {
   });
 });
 
+let about = gsap
+  .timeline({ defaults: { ease: "none" }, repeat: 1 })
+  .to(".left .animate__this1", {
+    y: "0%",
+    opacity: 1,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(".left .animate__this1", {
+    y: "-140%",
+    opacity: 0,
+    delay: 1.7,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(
+    ".left .animate__this2",
+    {
+      y: "0%",
+      opacity: 1,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.9"
+  )
+  .to(
+    ".left .animate__this2",
+    {
+      y: "-140%",
+      opacity: 0,
+      delay: 2.7,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.9"
+  )
+  .to(
+    ".left .animate__this3",
+    {
+      y: "0%",
+      opacity: 1,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.9"
+  );
+// .to(
+//   ".left .animate__this3",
+//   {
+//     y: "-140%",
+//     opacity: 0,
+//     delay: 2.7,
+//     duration: 0.9,
+//     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//   },
+//   "-=0.9"
+// );
+
+gsap.to(".rotatedAnchor .circulerText", {
+  scrollTrigger: {
+    trigger: ".rotatedAnchor .circulerText",
+    start: "top bottom",
+    scroller: ".scrollContainer",
+    end: "bottom top",
+    scrub: 1,
+  },
+  rotate: 720,
+});
 // ScrollTrigger.create({
 //   trigger: ".section__3",
 //   start: "top 40%",
@@ -196,8 +264,8 @@ gsap.to("html", {
     trigger: ".section__4",
     start: "top center",
     scroller: ".scrollContainer",
-    end: "+=500",
-    scrub: true,
+    end: "end end",
+    scrub: 0.5,
     // markers: true,
   },
   "--section4__padding": "0px",
