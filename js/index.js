@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 // locoScroll.init();
 // locoScroll.start();
 
@@ -29,6 +30,7 @@ const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".scrollContainer"),
   smooth: true,
   getSpeed: true,
+  getDirection: true,
   smoothMobile: true,
   lerp: 0.06,
 });
@@ -37,6 +39,7 @@ const contents = document.querySelectorAll(".menu__item");
 var speed = 0;
 
 locoScroll.on("scroll", (args) => {
+  // console.log(args);
   speed = args.speed;
   contents.forEach((content) => {
     content.style.transform = "skewY(" + clamp(speed, -8, 8) + "deg)";

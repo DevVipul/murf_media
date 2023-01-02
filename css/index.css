@@ -660,7 +660,7 @@ html.has-scroll-smooth {
 .section__4 .left .animate__this {
   display: inline-block;
   position: absolute;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   left: 50%;
   transform: translate(-50%, 200%) scale(1, 1);
   transform-origin: 50% 100%;
