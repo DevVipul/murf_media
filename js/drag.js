@@ -54,8 +54,8 @@ class Slider {
       callbackScope: this,
       onPress: function (e) {
         gsap.to(slider.children, {
-          duration: 0.4,
-          ease: "power1.inOut",
+          duration: 1.2,
+          ease: CustomEase.create("custom", "M0,0,C0.402,0,0,1,1,1"),
           scale: 0.9,
           overwrite: true,
         });
@@ -64,8 +64,8 @@ class Slider {
       },
       onRelease: function () {
         gsap.to(slider.children, {
-          duration: 1,
-          ease: "power1.inOut",
+          duration: 1.2,
+          ease: CustomEase.create("custom", "M0,0,C0.402,0,0,1,1,1"),
           scale: 1,
           overwrite: true,
         });

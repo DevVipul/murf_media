@@ -1,6 +1,5 @@
 body {
   font-family: "Inter";
-  height: 100vh;
 }
 
 @keyframes rotate {
@@ -10,10 +9,6 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-main {
-  height: 100vh;
 }
 
 .hire-me--wrapper {
@@ -62,11 +57,13 @@ textPath {
 /* limit */
 
 body {
-  height: 300vh;
   margin: 0;
-  overflow-x: hidden;
 }
 
+main {
+  overflow: hidden;
+  width: 100vw;
+}
 .wrapperRollingText {
   white-space: nowrap;
   font-family: "Inter", serif;
