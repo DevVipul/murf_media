@@ -1,3 +1,7 @@
+let link = document.querySelector(".vipul1");
+let link2 = document.querySelector(".vipul2");
+let section = document.querySelector(".section__1");
+
 class hoverEffect {
   constructor(el) {
     this.el = el;
@@ -9,8 +13,8 @@ class hoverEffect {
   }
 
   attachEventsListener() {
-    window.addEventListener("mousemove", (e) => this.onMouseMove(e));
-    window.addEventListener("resize", (e) => this.calculatePosition(e));
+    section.addEventListener("mousemove", (e) => this.onMouseMove(e));
+    section.addEventListener("resize", (e) => this.calculatePosition(e));
   }
 
   calculatePosition() {
@@ -70,7 +74,5 @@ class hoverEffect {
   }
 }
 
-let link = document.querySelector(".vipul1");
-let link2 = document.querySelector(".vipul2");
 new hoverEffect(link);
 new hoverEffect(link2);
