@@ -142,9 +142,10 @@
 .g-7 .img-wrapper {
   display: flex;
   flex-direction: column;
-  /* border-radius: 25px; */
+  border-radius: 25px;
   overflow: hidden;
   width: 100%;
+  /* opacity: 0.5; */
   /* aspect-ratio: 1/1; */
 }
 img {
