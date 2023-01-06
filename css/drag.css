@@ -4,20 +4,109 @@
   box-sizing: border-box;
 }
 
+.about__me {
+  padding-inline: 300px;
+  height: 50vh;
+  margin-bottom: 20px;
+}
+
+.section__2 .container {
+  display: flex;
+  padding-top: 90px;
+}
+.section__2_left {
+  width: 80%;
+  font-size: 40px;
+  padding-right: 150px;
+  line-height: 1.6em;
+  color: #1c1d20;
+}
+
+.section__2_right {
+  width: 30%;
+  font-size: 18px;
+  color: #1c1d20;
+  position: relative;
+}
+
+.section__2_top {
+  padding-top: 16px;
+  line-height: 1.7em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.section__2_bottom {
+  /* position: absolute;
+  top: 80%;
+  left: 20%; */
+}
+
+.section__2 .footer__heading {
+  font-size: 1.2vw;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1c1d20;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  line-height: 1em;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
 #slider-one-wrap,
 #slider-inner {
-  display: flex;
+  /* display: flex; */
   overflow-x: hidden;
+  justify-content: space-between;
+  /* padding-inline: var(--padding); */
 }
 #slider-inner {
-  width: 100vw;
+  /* width: 100vw; */
   position: relative;
   height: 100%;
 }
 
 #one {
   position: relative;
-  height: 40vh;
+  height: 27vh;
+  width: calc(100% - (2 * var(--padding)));
+  margin-inline: auto;
+  overflow: hidden;
+  border-block: 1px solid rgba(0, 0, 0, 0.106);
+  padding-block: 25px;
+}
+
+.me {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.065;
+  margin-bottom: 1em;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+  padding-left: calc(2 * var(--padding));
+  /* margin-left: 10px; */
+  /* display: inline-block; */
+  margin-bottom: 25px;
+  /* position: absolute; */
+}
+
+.slider_wip {
+  width: calc(100% - (2 * var(--padding)));
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-inline: auto;
 }
 
 /* section {
@@ -37,6 +126,7 @@
 .slider {
   display: flex;
   flex-wrap: nowrap;
+  /* justify-content: space-evenly; */
   height: 100%;
 }
 .slider .g-7 {
@@ -47,14 +137,15 @@
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
+  margin-left: 100px;
 }
 .g-7 .img-wrapper {
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
 }
 img {
   width: 100%;
