@@ -7,7 +7,7 @@
   --background-color2: #fff;
   --color1: #f5f5f5;
   --color2: #212121;
-  --padding: 150px;
+  --padding: clamp(20px, 7.8vw + 10px, 150px);
 }
 
 *::selection {
@@ -48,6 +48,7 @@ body {
   overscroll-behavior-y: none;
   width: 100%;
   height: 100%;
+  background-color: #181619;
 }
 
 a {
@@ -107,11 +108,9 @@ ul {
   color: var(--primary-color);
 }
 .section__1 {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   position: relative;
-  background-color: var(--background-color3);
+  background-image: url(../img/denni2.png);
+  color: #fff;
 }
 
 .section1__wrapper {
@@ -129,6 +128,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none !important;
 }
 
 .hire-me--text {
@@ -170,32 +170,107 @@ textPath {
 
 .wrapperRollingText {
   white-space: nowrap;
-  position: relative;
+  position: absolute;
+  bottom: 10%;
   /* width: 100vw; */
 }
 .rollingText {
   white-space: nowrap;
   font-weight: bold;
-  font-size: 6vw;
+  font-size: 200px;
   display: inline-block;
   /* padding-left: 10px; */
 }
 
-.section__3 {
-  height: 100vh;
-  position: relative;
+/* ad/ */
+.section__1 .left {
+  font-size: 40px;
+  font-weight: lighter;
+  /* letter-spacing: -1.68px; */
+  /* line-height: 1.2em; */
+  /* text-align: center; */
+  /* margin-bottom: 21px; */
+  position: absolute;
+  right: 135px;
+  /* top: 34.6%; */
+}
+
+.section__1 .left .free {
+  white-space: nowrap;
+}
+
+.section__1 .left .animation__wrapper {
   overflow: hidden;
-  background-color: var(--background-color);
+  position: relative;
+}
+
+.section__1 .left .animate__this {
+  display: inline-block;
+  position: absolute;
+  /* margin-left: 20px; */
+  /* left: 50%; */
+  transform: translate(0%, 200%) scale(1, 1);
+  transform-origin: 50% 100%;
+  white-space: nowrap;
+  opacity: 0;
+  /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%); */
+}
+
+.email_section1 {
+  position: absolute;
+  left: 0;
+  display: flex;
+}
+
+.email_section1 .sqaure {
+  width: 225px;
+  height: 110px;
+  background-color: #1c1d20;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  padding-left: 30px;
+  padding-right: 70px;
+}
+
+.email_section1 .round {
+  position: relative;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  background-color: #1c1d20;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.email_section1 .round img {
+  width: 70%;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* ad/ */
+
+.section__3 {
+  /* height: 100vh; */
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-color);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   background-color: #000000;
+  isolation: isolate;
 }
 
 .section__3 .heading {
   position: relative;
   z-index: 1;
-  font-size: 180px;
+  font-size: 200px;
   text-align: center;
   letter-spacing: -0.04em;
   line-height: 0.9em;
@@ -299,7 +374,8 @@ textPath {
   height: calc(100% - (var(--padding)));
   overflow: hidden;
   /* padding: var(--padding); */
-  overflow: hidden;
+  /* display: none; */
+  z-index: -1;
 }
 
 .section3__video video {
@@ -308,13 +384,14 @@ textPath {
   height: 100%;
   object-fit: cover;
   opacity: 0.5;
+  overflow: hidden;
 }
 
 /* section__5 */
 .section__5 {
   background-color: #000;
   /* min-height: 700px; */
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   padding-block: 60px;
@@ -354,7 +431,7 @@ textPath {
   opacity: 0.5;
 }
 
-.section__5 > div {
+.section__5 .footer__links {
   min-height: 52.2px;
   min-width: calc(100% - (2 * var(--padding)));
   position: absolute;
@@ -381,7 +458,7 @@ textPath {
 }
 
 @media only screen and (max-width: 425px) {
-  .section__5 > div {
+  .section__5 .footer__links {
     flex-direction: column;
     padding: 20px;
     gap: 20px;

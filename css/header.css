@@ -5,18 +5,18 @@
 }
 
 .nav__container {
-  position: fixed;
+  position: absolute;
   z-index: 5000;
   left: 0;
   top: 0;
   width: 100%;
   /* overflow: hidden; */
-  display: none;
+  /* display: none; */
 }
 
 .nav__container .nav__bar {
   width: 100%;
-  padding: 40px 4vw 0;
+  padding: 40px 2vw 0;
 }
 
 .nav__container .nav__bar {
@@ -26,13 +26,12 @@
 }
 
 .nav__container .nav__bar .logo {
-  width: 50px;
-  height: 10px;
+  font-size: 1.8rem;
 }
 
 .nav__container .nav__bar .logo img {
   position: absolute;
-  width: 55px;
+  width: 40px;
   transform: translateY(-40%);
 }
 
@@ -45,7 +44,7 @@
 
 .nav__container .nav__bar ul {
   display: flex;
-  gap: 3.2rem;
+  gap: 5.2rem;
   list-style: none;
   align-items: center;
 }
@@ -61,6 +60,7 @@
   position: relative;
   width: 34px;
   cursor: pointer;
+  display: none;
 }
 
 .menu .circle {

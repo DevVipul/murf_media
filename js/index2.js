@@ -8,6 +8,135 @@ document.addEventListener("mousemove", function (e) {
   });
 });
 
+let footerAnim = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__5 .footer__heading", {
+    opacity: 0,
+    delay: 0.7,
+    y: 500,
+    duration: 0.7,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .from(
+    ".section__5 .footer__img",
+    {
+      opacity: 0,
+      y: 500,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.906,0 0.16,1 1,1 "),
+    },
+    "-=0.60"
+  )
+  .from(
+    ".section__5 .footer__links",
+    {
+      opacity: 0,
+      y: 500,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.6"
+  );
+
+let rounded__div__section2__down = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__2 .rounded__div__down", {
+    duration: 0.1,
+  })
+  .to(".section__2 .rounded__div__down", {
+    height: "0vh",
+    duration: 1.2,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  });
+
+let rounded__div__section2__up = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__2 .rounded__div__up", {
+    duration: 0.1,
+  })
+  .to(".section__2 .rounded__div__up", {
+    height: "0vh",
+    duration: 1.2,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  });
+
+let rounded__div__section3__down = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__3 .rounded__div__down", {
+    duration: 0.1,
+  })
+  .to(".section__3 .rounded__div__down", {
+    height: "0vh",
+    duration: 1.2,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  });
+
+let anim__section2__down = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__2 .anime", {
+    duration: 0.3,
+  })
+  .from(".section__2 .anime", {
+    y: "30vh",
+    duration: 1.1,
+    stagger: 0.1,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  });
+
+let anim__section2__up = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__2 .anime", {
+    duration: 0.3,
+  })
+  .fromTo(
+    ".section__2 .anime",
+    {
+      y: "-30vh",
+
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    {
+      y: "0vh",
+      duration: 1.1,
+      stagger: -0.08,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    }
+  );
+
+let anim__section3__down = gsap
+  .timeline({ defaults: { ease: "none" }, paused: true })
+  .from(".section__3 .anime", {
+    duration: 0.3,
+  })
+  .fromTo(
+    ".section__3 .anime",
+    {
+      y: "30vh",
+
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    {
+      y: "0vh",
+      duration: 1.1,
+      stagger: 0.1,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    }
+  );
+
+const myText = new SplitType("#my-text");
+// const myText2 = new SplitType("#my-text2");
+let textAnim__section2__down = gsap.from("#my-text .line .word .char", 1.4, {
+  y: "200%",
+  skewX: -10,
+  scaleY: 1.5,
+  paused: true,
+  delay: 1.3,
+  stagger: 0.04,
+  ease: CustomEase.create("custom", "M0,0,C0.5,0,0,1,1,1"),
+});
+
+const videoElement = document.querySelector("#video");
+
 new fullpage("#fullpage", {
   //options here
   autoScrolling: true,
@@ -20,13 +149,75 @@ new fullpage("#fullpage", {
   credits: { enabled: false },
 
   onLeave: function (index, nextIndex, direction) {
-    document.querySelector("#video").play();
+    // console.log(index);
+    // console.log(direction);
+    if (nextIndex.anchor == "fourth") {
+      footerAnim.restart();
+    }
+    if (nextIndex.anchor == "second") {
+      if (direction == "down") {
+        // rounded__div__section2__down.restart();
+        anim__section2__down.restart();
+        textAnim__section2__down.restart();
+      } else {
+        // textAnim__section2__up.restart();
+        anim__section2__up.restart();
+        rounded__div__section2__up.restart();
+      }
+    }
+
+    if (nextIndex.anchor == "third") {
+      // videoElement.pause();
+      videoElement.currentTime = 1.6;
+      videoElement.play();
+      if (direction == "down") {
+        // rounded__div__section3__down.restart();
+        anim__section3__down.restart();
+      } else {
+      }
+    }
+    if (direction == "down") {
+      gsap
+        .timeline()
+        .from(`.${nextIndex.anchor} .rounded__div__down`, {
+          duration: 0.5,
+        })
+        .fromTo(
+          `.${nextIndex.anchor} .rounded__div__down`,
+          {
+            height: "17vh",
+            duration: 1.2,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+          },
+          {
+            height: "0vh",
+          }
+        );
+    } else {
+      gsap
+        .timeline()
+        .from(`.${nextIndex.anchor} .rounded__div__up`, {
+          duration: 0.5,
+        })
+        .fromTo(
+          `.${nextIndex.anchor} .rounded__div__up`,
+          {
+            height: "17vh",
+            duration: 1.2,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+          },
+          {
+            height: "0vh",
+          }
+        );
+    }
   },
 });
 
 let direction = 1; // 1 = forward, -1 = backward scroll
 
 const roll1 = roll(".rollingText", { duration: 15 });
+const roll2 = roll(".rollingText2", { duration: 15 });
 //   scroll = ScrollTrigger.create({
 //     onUpdate(self) {
 //       if (self.direction !== direction) {
@@ -58,7 +249,7 @@ function roll(targets, vars, reverse) {
           position: "absolute",
           overwrite: false,
           top: el.offsetTop,
-          left: el.offsetLeft + (reverse ? -el.offsetWidth : el.offsetWidth),
+          left: "100%",
         })
       );
   positionClones();
@@ -73,6 +264,43 @@ function roll(targets, vars, reverse) {
   });
   return tl;
 }
+
+let about = gsap
+  .timeline({ defaults: { ease: "none" }, repeat: -1 })
+  .to(".left .animate__this1", {
+    y: "0%",
+    opacity: 1,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(".left .animate__this1", {
+    y: "-140%",
+    opacity: 0,
+    delay: 1.7,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(
+    ".left .animate__this2",
+    {
+      y: "0%",
+      opacity: 1,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.9"
+  )
+  .to(
+    ".left .animate__this2",
+    {
+      y: "-140%",
+      opacity: 0,
+      delay: 2.7,
+      duration: 0.9,
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+    },
+    "-=0.9"
+  );
 
 // // Variables
 // const el = document.querySelector(".section__4 .title");
