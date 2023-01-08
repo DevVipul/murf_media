@@ -71,7 +71,7 @@
 .rounded__div__down,
 .rounded__div__up {
   height: 0vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   left: 0;
   overflow: hidden;

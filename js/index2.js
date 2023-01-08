@@ -38,39 +38,6 @@ let footerAnim = gsap
     "-=0.6"
   );
 
-let rounded__div__section2__down = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__2 .rounded__div__down", {
-    duration: 0.1,
-  })
-  .to(".section__2 .rounded__div__down", {
-    height: "0vh",
-    duration: 1.2,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  });
-
-let rounded__div__section2__up = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__2 .rounded__div__up", {
-    duration: 0.1,
-  })
-  .to(".section__2 .rounded__div__up", {
-    height: "0vh",
-    duration: 1.2,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  });
-
-let rounded__div__section3__down = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__3 .rounded__div__down", {
-    duration: 0.1,
-  })
-  .to(".section__3 .rounded__div__down", {
-    height: "0vh",
-    duration: 1.2,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  });
-
 let anim__section2__down = gsap
   .timeline({ defaults: { ease: "none" }, paused: true })
   .from(".section__2 .anime", {
@@ -156,13 +123,11 @@ new fullpage("#fullpage", {
     }
     if (nextIndex.anchor == "second") {
       if (direction == "down") {
-        // rounded__div__section2__down.restart();
-        anim__section2__down.restart();
+        // anim__section2__down.restart();
         textAnim__section2__down.restart();
       } else {
         // textAnim__section2__up.restart();
-        anim__section2__up.restart();
-        rounded__div__section2__up.restart();
+        // anim__section2__up.restart();
       }
     }
 
@@ -171,8 +136,7 @@ new fullpage("#fullpage", {
       videoElement.currentTime = 1.6;
       videoElement.play();
       if (direction == "down") {
-        // rounded__div__section3__down.restart();
-        anim__section3__down.restart();
+        // anim__section3__down.restart();
       } else {
       }
     }
@@ -180,34 +144,52 @@ new fullpage("#fullpage", {
       gsap
         .timeline()
         .from(`.${nextIndex.anchor} .rounded__div__down`, {
-          duration: 0.5,
+          duration: 0.1,
         })
         .fromTo(
           `.${nextIndex.anchor} .rounded__div__down`,
           {
             height: "17vh",
-            duration: 1.2,
-            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           },
           {
             height: "0vh",
+            duration: 1.2,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+          }
+        );
+
+      gsap
+        .timeline()
+        .from(`.${nextIndex.anchor} .anime`, {
+          duration: 0.3,
+        })
+        .fromTo(
+          `.${nextIndex.anchor} .anime`,
+          {
+            y: "30vh",
+          },
+          {
+            y: "0vh",
+            duration: 1.1,
+            stagger: 0.1,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           }
         );
     } else {
       gsap
         .timeline()
         .from(`.${nextIndex.anchor} .rounded__div__up`, {
-          duration: 0.5,
+          duration: 0.1,
         })
         .fromTo(
           `.${nextIndex.anchor} .rounded__div__up`,
           {
             height: "17vh",
-            duration: 1.2,
-            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           },
           {
             height: "0vh",
+            duration: 1.2,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           }
         );
     }
