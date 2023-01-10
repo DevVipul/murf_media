@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 :root {
   --primary-color: hsl(54, 100%, 50%);
   --padding: clamp(20px, 7.8vw + 10px, 150px);
+  --padding2: 2vw;
   --colorDark: hsl(54, 6%, 5%);
   --colorLight: #fff;
   --fontExtraSmallest: 10px;
@@ -62,6 +64,7 @@ html {
 
 body {
   font-family: "ginger";
+  font-family: "DM Sans", sans-serif;
   /* background-color: var(--background-color3); */
   overscroll-behavior-y: none;
   width: 100%;
@@ -310,7 +313,7 @@ textPath {
   }
 
   .wrapperRollingText {
-    bottom: 20%;
+    bottom: 160px;
   }
 
   .email_section1 .sqaure {
@@ -344,7 +347,7 @@ textPath {
 /* ad/ */
 
 .section__3 {
-  /* height: 100vh; */
+  height: 100%;
   position: relative;
   overflow: hidden;
   display: flex !important;
@@ -362,14 +365,6 @@ textPath {
   letter-spacing: -0.04em;
   line-height: 0.9em;
   color: var(--colorLight);
-}
-
-@media only screen and (max-width: 768px) {
-  .section__3 .heading {
-  }
-}
-
-@media only screen and (max-width: 425px) {
 }
 
 .section__3 .work__cto {
@@ -473,6 +468,15 @@ textPath {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 768px) {
+  .section3__video {
+    width: calc(100% - (var(--padding)));
+  }
+}
+
+@media only screen and (max-width: 425px) {
+}
+
 /* section__5 */
 .section__5 {
   background-color: var(--colorDark);
@@ -574,6 +578,7 @@ textPath {
 .section__2 {
   background-color: var(--colorLight);
   overflow: hidden;
+  padding-inline: var(--padding2);
 }
 
 .section__2 .container {
@@ -610,6 +615,12 @@ textPath {
   overflow: hidden;
 }
 
+.section__2_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .section__2 .footer__heading {
   font-size: var(--fontSmall);
   white-space: nowrap;
@@ -622,11 +633,9 @@ textPath {
   align-items: center;
   justify-content: center;
   padding: 1.2em;
-  text-align: center;
   line-height: 1em;
-  position: absolute;
+  position: relative;
   margin-top: 40px;
-  margin-left: 70px;
 }
 
 .rounded__div__down,
@@ -697,8 +706,6 @@ textPath {
 
   .section__2_right {
     width: auto;
-
-    position: relative;
   }
 
   .me {
@@ -709,6 +716,14 @@ textPath {
 
   .rounded__div {
     height: 10vh;
+  }
+
+  .section__2_bottom {
+    justify-content: flex-start;
+  }
+
+  .section__2 .footer__heading {
+    margin-left: 0px;
   }
 }
 

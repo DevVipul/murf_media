@@ -42,4 +42,8 @@
   .nav__container .nav__bar > ul {
     height: 28px;
   }
+
+  .nav__container .nav__bar ul {
+    padding: 40px 4vw 0;
+  }
 }
