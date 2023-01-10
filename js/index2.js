@@ -4,94 +4,49 @@ document.addEventListener("mousemove", function (e) {
   gsap.to(".cursor", {
     x: e.clientX,
     y: e.clientY,
-    stagger: 0.06,
+    stagger: 0.05,
   });
 });
 
-let footerAnim = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__5 .footer__heading", {
+let about = gsap
+  .timeline({ defaults: { ease: "none" }, repeat: -1 })
+  .to(".left .animate__this1", {
+    y: "0%",
+    opacity: 1,
+    duration: 0.9,
+    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+  })
+  .to(".left .animate__this1", {
+    y: "-140%",
     opacity: 0,
-    delay: 0.7,
-    y: 500,
-    duration: 0.7,
+    delay: 1.7,
+    duration: 0.9,
     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
   })
-  .from(
-    ".section__5 .footer__img",
+  .to(
+    ".left .animate__this2",
     {
-      opacity: 0,
-      y: 500,
+      y: "0%",
+      opacity: 1,
       duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.906,0 0.16,1 1,1 "),
+      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     },
-    "-=0.60"
+    "-=0.9"
   )
-  .from(
-    ".section__5 .footer__links",
+  .to(
+    ".left .animate__this2",
     {
+      y: "-140%",
       opacity: 0,
-      y: 500,
+      delay: 2.7,
       duration: 0.9,
       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
     },
-    "-=0.6"
-  );
-
-let anim__section2__down = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__2 .anime", {
-    duration: 0.3,
-  })
-  .from(".section__2 .anime", {
-    y: "30vh",
-    duration: 1.1,
-    stagger: 0.1,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  });
-
-let anim__section2__up = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__2 .anime", {
-    duration: 0.3,
-  })
-  .fromTo(
-    ".section__2 .anime",
-    {
-      y: "-30vh",
-
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    {
-      y: "0vh",
-      duration: 1.1,
-      stagger: -0.08,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    }
-  );
-
-let anim__section3__down = gsap
-  .timeline({ defaults: { ease: "none" }, paused: true })
-  .from(".section__3 .anime", {
-    duration: 0.3,
-  })
-  .fromTo(
-    ".section__3 .anime",
-    {
-      y: "30vh",
-
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    {
-      y: "0vh",
-      duration: 1.1,
-      stagger: 0.1,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    }
+    "-=0.9"
   );
 
 const myText = new SplitType("#my-text");
-// const myText2 = new SplitType("#my-text2");
+
 let textAnim__section2__down = gsap.from("#my-text .line .word .char", 1.4, {
   y: "200%",
   skewX: -10,
@@ -117,10 +72,15 @@ new fullpage("#fullpage", {
 
   onLeave: function (index, nextIndex, direction) {
     // console.log(index);
+
     // console.log(direction);
-    if (nextIndex.anchor == "fourth") {
-      footerAnim.restart();
+    if (nextIndex.anchor == "first") {
+      if (direction == "down") {
+      } else {
+        about.seek(1.2);
+      }
     }
+
     if (nextIndex.anchor == "second") {
       if (direction == "down") {
         // anim__section2__down.restart();
@@ -132,14 +92,11 @@ new fullpage("#fullpage", {
     }
 
     if (nextIndex.anchor == "third") {
-      // videoElement.pause();
       videoElement.currentTime = 1.6;
       videoElement.play();
-      if (direction == "down") {
-        // anim__section3__down.restart();
-      } else {
-      }
     }
+
+    var flex = screen.width > 540 ? 17 : 5;
     if (direction == "down") {
       gsap
         .timeline()
@@ -149,7 +106,7 @@ new fullpage("#fullpage", {
         .fromTo(
           `.${nextIndex.anchor} .rounded__div__down`,
           {
-            height: "17vh",
+            height: `${flex}vh`,
           },
           {
             height: "0vh",
@@ -171,7 +128,7 @@ new fullpage("#fullpage", {
           {
             y: "0vh",
             duration: 1.1,
-            stagger: 0.1,
+            stagger: 0.14,
             ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           }
         );
@@ -184,11 +141,29 @@ new fullpage("#fullpage", {
         .fromTo(
           `.${nextIndex.anchor} .rounded__div__up`,
           {
-            height: "17vh",
+            height: `${flex}vh`,
           },
           {
             height: "0vh",
             duration: 1.2,
+            ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+          }
+        );
+
+      gsap
+        .timeline()
+        .from(`.${nextIndex.anchor} .anime`, {
+          duration: 0.3,
+        })
+        .fromTo(
+          `.${nextIndex.anchor} .anime`,
+          {
+            y: "-30vh",
+          },
+          {
+            y: "0vh",
+            duration: 1.1,
+            stagger: -0.08,
             ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           }
         );
@@ -246,43 +221,6 @@ function roll(targets, vars, reverse) {
   });
   return tl;
 }
-
-let about = gsap
-  .timeline({ defaults: { ease: "none" }, repeat: -1 })
-  .to(".left .animate__this1", {
-    y: "0%",
-    opacity: 1,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(".left .animate__this1", {
-    y: "-140%",
-    opacity: 0,
-    delay: 1.7,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(
-    ".left .animate__this2",
-    {
-      y: "0%",
-      opacity: 1,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.9"
-  )
-  .to(
-    ".left .animate__this2",
-    {
-      y: "-140%",
-      opacity: 0,
-      delay: 2.7,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.9"
-  );
 
 // // Variables
 // const el = document.querySelector(".section__4 .title");
