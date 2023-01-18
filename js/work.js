@@ -110,7 +110,7 @@ new fullpage("#fullpage", {
           {
             y: "0vh",
             duration: 1.1,
-            stagger: -0.04,
+            stagger: -0.045,
             ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
           }
         );
