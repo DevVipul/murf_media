@@ -67,11 +67,12 @@ ul {
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .title {
   position: absolute;
-  overflow: hidden;
+  /* overflow: hidden; */
   top: 50%;
   transform: translate(0, -50%);
   z-index: 200;
