@@ -793,6 +793,7 @@ textPath {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -800,8 +801,8 @@ textPath {
   padding: 1vw;
 }
 .g-7 {
-  height: 100%;
-  aspect-ratio: 1/1;
+  /* height: 100%; */
+  /* aspect-ratio: 1/1; */
   display: flex;
   flex-direction: column;
   /* margin-inline: 100px; */
@@ -820,8 +821,9 @@ textPath {
   opacity: 0.5;
   /* aspect-ratio: 1/1; */
 }
-img {
+.g-7 .img-wrapper img {
   display: block;
+  width: 10px;
 }
 
 .disabled {
