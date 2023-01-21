@@ -206,7 +206,7 @@ function roll(targets, vars, reverse) {
           position: "absolute",
           overwrite: false,
           top: el.offsetTop,
-          left: "100%",
+          left: el.offsetLeft + (reverse ? -el.offsetWidth : el.offsetWidth),
         })
       );
   positionClones();
