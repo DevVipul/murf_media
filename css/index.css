@@ -716,7 +716,7 @@ textPath {
     width: auto;
 
     padding-right: 0px;
-    line-height: 1.6em;
+    line-height: 1.2em;
   }
 
   .section__2_right {
@@ -750,7 +750,7 @@ textPath {
   /* width: 100vw; */
   position: relative;
   height: 100%;
-  width: 100%;
+  /* min-width: 100%; */
 }
 
 #one {
@@ -792,7 +792,7 @@ textPath {
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 .slider .g-7 {
   padding: 1vw;
@@ -838,7 +838,7 @@ a {
 
 @media only screen and (max-width: 768px) {
   .slider_wip {
-    width: 100%;
+    width: auto;
   }
 
   #one {
