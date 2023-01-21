@@ -543,9 +543,6 @@ textPath {
 }
 
 @media only screen and (max-width: 768px) {
-  .section__5 .footer__heading {
-  }
-
   .section__5 img {
     height: 350px;
   }
@@ -823,7 +820,7 @@ textPath {
 }
 .g-7 .img-wrapper img {
   display: block;
-  width: 10px;
+  /* width: 10px; */
 }
 
 .disabled {

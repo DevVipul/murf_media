@@ -71,136 +71,136 @@ ScrollTrigger.scrollerProxy(".scrollContainer", {
     : "fixed",
 });
 
-window.addEventListener("load", (event) => {
-  let intro = gsap
-    .timeline({ defaults: { ease: "none" } })
-    .to(".intro .animate__this1", {
-      y: "0%",
-      scaleY: 1,
-      skewX: "0deg",
-      delay: 0.3,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    })
-    .to(".intro .animate__this1", {
-      y: "-140%",
-      scaleY: 1.5,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    })
-    .to(
-      ".intro .animate__this2",
-      {
-        y: "0%",
-        scaleY: 1,
-        skewX: "0deg",
-        duration: 0.9,
-        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-      },
-      "-=0.9"
-    )
-    .to(
-      ".intro .animate__this2",
-      {
-        y: "-140%",
-        scaleY: 1.5,
-        delay: 1,
-        duration: 0.9,
-        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-      },
-      "-=0.9"
-    )
-    .to(
-      ".intro .animate__this3",
-      {
-        y: "0%",
-        scaleY: 1,
-        skewX: "0deg",
-        duration: 0.9,
-        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-      },
-      "-=0.9"
-    )
-    .to(
-      ".intro",
-      {
-        // y: "-100%",
-        opacity: 0,
-        duration: 0.5,
-        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-      },
-      "+=0.5"
-    )
-    .from(
-      ".section__1 .anim",
-      {
-        y: "100%",
-        opacity: 0,
-        skewX: "-10deg",
-        scaleY: 1.5,
-        stagger: 0.12,
-        duration: 0.9,
-        ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-      },
-      "-=0.5"
-    );
+// window.addEventListener("load", (event) => {
+//   let intro = gsap
+//     .timeline({ defaults: { ease: "none" } })
+//     .to(".intro .animate__this1", {
+//       y: "0%",
+//       scaleY: 1,
+//       skewX: "0deg",
+//       delay: 0.3,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     })
+//     .to(".intro .animate__this1", {
+//       y: "-140%",
+//       scaleY: 1.5,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     })
+//     .to(
+//       ".intro .animate__this2",
+//       {
+//         y: "0%",
+//         scaleY: 1,
+//         skewX: "0deg",
+//         duration: 0.9,
+//         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//       },
+//       "-=0.9"
+//     )
+//     .to(
+//       ".intro .animate__this2",
+//       {
+//         y: "-140%",
+//         scaleY: 1.5,
+//         delay: 1,
+//         duration: 0.9,
+//         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//       },
+//       "-=0.9"
+//     )
+//     .to(
+//       ".intro .animate__this3",
+//       {
+//         y: "0%",
+//         scaleY: 1,
+//         skewX: "0deg",
+//         duration: 0.9,
+//         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//       },
+//       "-=0.9"
+//     )
+//     .to(
+//       ".intro",
+//       {
+//         // y: "-100%",
+//         opacity: 0,
+//         duration: 0.5,
+//         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//       },
+//       "+=0.5"
+//     )
+//     .from(
+//       ".section__1 .anim",
+//       {
+//         y: "100%",
+//         opacity: 0,
+//         skewX: "-10deg",
+//         scaleY: 1.5,
+//         stagger: 0.12,
+//         duration: 0.9,
+//         ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//       },
+//       "-=0.5"
+//     );
 
-  gsap.to("#starter__number", {
-    innerText: 100,
-    duration: 4,
-    snap: {
-      innerText: 1,
-    },
-    ease: CustomEase.create("custom", "M0,0,C0,0,0,1,1,1"),
-  });
-});
+//   gsap.to("#starter__number", {
+//     innerText: 100,
+//     duration: 4,
+//     snap: {
+//       innerText: 1,
+//     },
+//     ease: CustomEase.create("custom", "M0,0,C0,0,0,1,1,1"),
+//   });
+// });
 
-let about = gsap
-  .timeline({ defaults: { ease: "none" }, repeat: 1 })
-  .to(".left .animate__this1", {
-    y: "0%",
-    opacity: 1,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(".left .animate__this1", {
-    y: "-140%",
-    opacity: 0,
-    delay: 1.7,
-    duration: 0.9,
-    ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-  })
-  .to(
-    ".left .animate__this2",
-    {
-      y: "0%",
-      opacity: 1,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.9"
-  )
-  .to(
-    ".left .animate__this2",
-    {
-      y: "-140%",
-      opacity: 0,
-      delay: 2.7,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.9"
-  )
-  .to(
-    ".left .animate__this3",
-    {
-      y: "0%",
-      opacity: 1,
-      duration: 0.9,
-      ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
-    },
-    "-=0.9"
-  );
+// let about = gsap
+//   .timeline({ defaults: { ease: "none" }, repeat: 1 })
+//   .to(".left .animate__this1", {
+//     y: "0%",
+//     opacity: 1,
+//     duration: 0.9,
+//     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//   })
+//   .to(".left .animate__this1", {
+//     y: "-140%",
+//     opacity: 0,
+//     delay: 1.7,
+//     duration: 0.9,
+//     ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//   })
+//   .to(
+//     ".left .animate__this2",
+//     {
+//       y: "0%",
+//       opacity: 1,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     },
+//     "-=0.9"
+//   )
+//   .to(
+//     ".left .animate__this2",
+//     {
+//       y: "-140%",
+//       opacity: 0,
+//       delay: 2.7,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     },
+//     "-=0.9"
+//   )
+//   .to(
+//     ".left .animate__this3",
+//     {
+//       y: "0%",
+//       opacity: 1,
+//       duration: 0.9,
+//       ease: CustomEase.create("custom", "M0,0 C0.52,0.01 0.16,1 1,1 "),
+//     },
+//     "-=0.9"
+//   );
 // .to(
 //   ".left .animate__this3",
 //   {

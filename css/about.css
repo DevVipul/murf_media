@@ -1,12 +1,12 @@
 :root {
   --primary-color: #ffe600;
-  --secondary-color: rgb(247 247 247);
-  --foreground-color: #212121;
+  --secondary-color: #fff;
+  --foreground-color: hsl(54, 6%, 5%);
   --background-color: #fff;
-  --background-color3: #999d9e;
+  --background-color3: hsl(54, 6%, 5%);
   --background-color2: #fff;
-  --color1: #f5f5f5;
-  --color2: #212121;
+  --color1: #fff;
+  --color2: hsl(54, 6%, 5%);
   --section4__padding: 100px;
 }
 
@@ -44,7 +44,7 @@ html {
 
 body {
   font-family: "ginger";
-  background-color: var(--background-color3);
+  /* background-color: var(--background-color3); */
   overscroll-behavior-y: none;
   width: 100%;
   height: 100%;
@@ -132,6 +132,7 @@ html.has-scroll-smooth {
   pointer-events: none;
   z-index: 99999;
   color: #f3f3f3;
+  display: none;
 }
 
 .intro h2 {
@@ -202,7 +203,7 @@ html.has-scroll-smooth {
   top: 0;
   left: 0;
   background-color: #000;
-  background-image: url("../img/dennissnellenberg-long.png");
+  background-image: url("../img/denni2.png");
   /* background-size: cover; */
   background-repeat: no-repeat;
 }
@@ -569,7 +570,7 @@ html.has-scroll-smooth {
 /* transform 0.9s cubic-bezier(0.52, 0.01, 0.16, 1) */
 
 .section__4 {
-  /* background-color: var(--color1); */
+  background-color: var(--color1);
   /* background-color: aqua; */
   z-index: 5;
   position: relative;
@@ -683,12 +684,16 @@ html.has-scroll-smooth {
   letter-spacing: 1.32px;
   line-height: 41.2px;
   margin-top: 1em;
-  max-width: 600px;
+  /* max-width: 600px; */
   color: var(--foreground-color);
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+  -webkit-line-clamp: 3; */
+  /* overflow: hidden; */
+}
+
+.section__4 .right .bottom {
+  display: none;
 }
 
 .rotatedAnchor {
