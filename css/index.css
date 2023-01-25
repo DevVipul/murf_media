@@ -772,6 +772,11 @@ textPath {
   display: flex;
 }
 
+.bi-linkedin {
+  width: 2em;
+  fill: var(--colorLight);
+}
+
 /* .section {
   width: 100vw !important;
   height: 100vh !important;
