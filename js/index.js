@@ -175,7 +175,7 @@ new fullpage("#fullpage", {
 let direction = 1; // 1 = forward, -1 = backward scroll
 
 const roll1 = roll(".rollingText", { duration: 15 });
-const roll2 = roll(".rollingText2", { duration: 15 });
+// const roll2 = roll(".rollingText2", { duration: 15 });
 
 // helper function that clones the targets, places them next to the original, then animates the xPercent in a loop to make it appear to roll across the screen in a seamless loop.
 function roll(targets, vars, reverse) {
