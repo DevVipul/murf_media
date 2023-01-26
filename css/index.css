@@ -25,7 +25,7 @@
   :root {
     --fontExtraSmall: 16px;
     --fontSmall: 7vw;
-    --fontBig: 12vw;
+    --fontBig: 12.2vw;
     --fontExtraBig: 29vw;
   }
 }
@@ -590,6 +590,7 @@ textPath {
 
   line-height: 1.6em;
   color: var(--colorDark);
+  text-align: center;
 }
 
 #my-text .line,
@@ -714,9 +715,10 @@ textPath {
 
   .section__2_left {
     width: auto;
-
+    white-space: nowrap;
     padding-right: 0px;
     line-height: 1.2em;
+    text-align: left;
   }
 
   .section__2_right {
@@ -740,6 +742,11 @@ textPath {
   .section__2 .footer__heading {
     margin-left: 0px;
     margin-top: 20px;
+  }
+
+  .section__2_top {
+    -webkit-line-clamp: 5;
+    padding-right: 30vw;
   }
 }
 
