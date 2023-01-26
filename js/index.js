@@ -177,6 +177,32 @@ let direction = 1; // 1 = forward, -1 = backward scroll
 const roll1 = roll(".rollingText", { duration: 15 });
 // const roll2 = roll(".rollingText2", { duration: 15 });
 
+gsap.fromTo(
+  `.rollingText2`,
+  {
+    xPercent: 0,
+  },
+  {
+    xPercent: -100,
+    duration: 20,
+    ease: CustomEase.create("custom", "M0,0,C0,0,1,1,1,1"),
+    repeat: -1,
+  }
+);
+
+gsap.fromTo(
+  `.rollingText3`,
+  {
+    xPercent: 0,
+  },
+  {
+    xPercent: -100,
+    duration: 20,
+    ease: CustomEase.create("custom", "M0,0,C0,0,1,1,1,1"),
+    repeat: -1,
+  }
+);
+
 // helper function that clones the targets, places them next to the original, then animates the xPercent in a loop to make it appear to roll across the screen in a seamless loop.
 function roll(targets, vars, reverse) {
   vars = vars || {};
