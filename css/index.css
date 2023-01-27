@@ -757,7 +757,7 @@ textPath {
   /* width: 100vw; */
   position: relative;
   height: 100%;
-  min-width: 100%;
+  min-width: auto;
 }
 
 .position {
@@ -815,8 +815,8 @@ textPath {
   padding: 1vw;
 }
 .g-7 {
-  /* height: 100%; */
-  /* aspect-ratio: 1/1; */
+  height: 100%;
+  aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
   /* margin-inline: 100px; */
@@ -832,12 +832,12 @@ textPath {
   width: 100%;
   justify-content: center;
   align-items: center;
-  opacity: 0.6;
+  opacity: 1;
   /* aspect-ratio: 1/1; */
 }
 .g-7 .img-wrapper img {
   display: block;
-  /* width: 10px; */
+  width: 100%;
 }
 
 .disabled {
@@ -864,7 +864,7 @@ a {
 
   #one {
     width: 100%;
-    height: auto;
+    height: 27vh;
   }
 }
 
