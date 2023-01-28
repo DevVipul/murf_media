@@ -203,6 +203,10 @@ gsap.fromTo(
   }
 );
 
+gsap.set(`.rollingText3`, {
+  left: `${document.querySelector(".rollingText3").offsetWidth}`,
+});
+
 // helper function that clones the targets, places them next to the original, then animates the xPercent in a loop to make it appear to roll across the screen in a seamless loop.
 function roll(targets, vars, reverse) {
   vars = vars || {};
