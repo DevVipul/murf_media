@@ -842,11 +842,13 @@ textPath {
   justify-content: center;
   align-items: center;
   opacity: 0.7;
+  filter: invert(0.9);
   /* aspect-ratio: 1/1; */
 }
 .g-7 .img-wrapper img {
   display: block;
   width: 100%;
+  /* background-color: #fff; */
 }
 
 .disabled {
