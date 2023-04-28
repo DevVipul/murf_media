@@ -183,9 +183,9 @@ html.has-scroll-smooth {
   top: 0;
   left: 0;
   z-index: 99;
-  background-image: url("../img/Inkedhumanastudio2.jpg");
+  /* background-image: url("../img/Inkedhumanastudio2.jpg"); */
   background-size: cover;
-  /* background-color: #000; */
+  background-color: #000;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -215,9 +215,9 @@ html.has-scroll-smooth {
 }
 
 .section__1 .logo__y {
-  width: 0.5em;
+  width: 0.455em;
   fill: #f3f3f3;
-  padding-left: 0.0289em;
+  margin-left: 0.0289em;
 }
 
 .section__1 .bottom {

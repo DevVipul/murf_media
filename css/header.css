@@ -1,0 +1,232 @@
+:root {
+  --primary-color: #ffe600;
+  --color-light: #000000;
+  --text-color: rgb(255, 255, 255);
+}
+
+.nav__container {
+  position: fixed;
+  z-index: 5000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* overflow: hidden; */
+  /* display: none; */
+}
+
+.nav__container .nav__bar {
+  width: 100%;
+  padding: 40px 4vw 0;
+}
+
+.nav__container .nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__container .nav__bar .logo {
+  width: 50px;
+  height: 10px;
+}
+
+.nav__container .nav__bar .logo img {
+  position: absolute;
+  width: 55px;
+  transform: translateY(-40%);
+}
+
+.nav__container .nav__bar .logo svg .st1 {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 75;
+  stroke-miterlimit: 10;
+}
+
+.nav__container .nav__bar ul {
+  display: flex;
+  gap: 3.2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav__container .nav__bar ul .nav__item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--text-color);
+}
+
+.nav__container .nav__bar ul .nav__item.menu {
+  margin-left: 3.4rem;
+  position: relative;
+  width: 34px;
+  cursor: pointer;
+}
+
+.menu .circle {
+  width: 34px;
+  height: 34px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: 0.3s;
+  transform: scale(1);
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.menu .circle:hover {
+  transform: scale(1.2);
+}
+
+.menu .dot {
+  width: 3px;
+  height: 3px;
+  background-color: var(--color-light);
+  border-radius: 50%;
+}
+
+.menu .line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 2px;
+  background-color: var(--color-light);
+  transform: translate(-50%, -50%) rotate(45deg);
+  display: none;
+}
+
+.menu.active .dot {
+  display: none;
+}
+
+.menu.active .line {
+  display: block;
+}
+
+.menu .line.line2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.nav__container .nav__bar ul .nav__item a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.menu .roundBG {
+  position: fixed;
+  background-color: var(--color-light);
+  transform: translate(50%, -50%) scale(0);
+  width: 200vw;
+  height: 200vw;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  transition: transform 1s ease;
+  z-index: -1;
+}
+
+.menu .roundBG.active {
+  transform: translate(50%, -50%) scale(2);
+}
+
+/* .nav__container .nav__bar .menu ul {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  flex-direction: column;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.nav__container .nav__bar .menu ul.active {
+  pointer-events: initial;
+  visibility: initial;
+}
+
+.nav__container .nav__bar .menu ul li a {
+  display: block;
+  font-size: 7rem;
+  opacity: 0;
+} */
+
+.nav__container .gyu {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  flex-direction: column;
+  pointer-events: none;
+  visibility: hidden;
+  display: flex;
+  gap: 3.2rem;
+  list-style: none;
+}
+
+.nav__container .gyu.active {
+  pointer-events: initial;
+  visibility: initial;
+}
+
+.nav__container .gyu .nav__link {
+  display: block;
+  font-size: 7rem;
+  opacity: 0;
+  text-decoration: none;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.nav__container .gyu .extra__links {
+  display: none;
+  margin-top: 30px;
+}
+
+.nav__container .gyu .extra__links a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.nav__container .gyu .extra__links svg {
+  width: 25px;
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .nav__container .nav__bar > ul {
+    height: 28px;
+  }
+  .nav__container .nav__bar ul .nav__item.menu {
+    display: block;
+  }
+
+  .nav__container .nav__bar ul .nav__item {
+    display: none;
+  }
+
+  .menu .roundBG {
+    width: 400vw;
+    height: 400vw;
+  }
+
+  .nav__container .gyu {
+    transform: translate(0%, 0%);
+    left: 20px;
+    top: 125px;
+  }
+
+  .nav__container .gyu .extra__links {
+    display: block;
+  }
+
+  .nav__container .gyu .nav__link {
+    font-size: 3.6rem;
+    text-align: left;
+  }
+}
