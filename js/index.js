@@ -157,7 +157,7 @@ const anim = lottie.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../body/data.json",
+  path: "./body/data.json",
 });
 
 // ScrollTrigger.create({
