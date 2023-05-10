@@ -152,6 +152,14 @@ window.addEventListener("load", (event) => {
   });
 });
 
+const anim = lottie.loadAnimation({
+  container: animation__container, // the dom element that will contain the animation
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "../body/data.json",
+});
+
 // ScrollTrigger.create({
 //   trigger: ".section__3",
 //   start: "top 40%",
@@ -201,6 +209,35 @@ gsap.to("html", {
     // markers: true,
   },
   "--section4__padding": "0px",
+});
+
+let brandRev = gsap.timeline();
+
+brandRev
+  .to(".section__1 .small__heading__ribbon", {
+    ease: "power4.out",
+    scaleX: 1,
+    skewY: -16,
+    duration: 1,
+    delay: 0.2,
+  })
+  .from(".section__1 .company", {
+    ease: "power4.out",
+    y: 26,
+    opacity: 0,
+    duration: 1,
+    stagger: {
+      amount: 0.4,
+    },
+  });
+
+ScrollTrigger.create({
+  trigger: ".brands",
+  start: "top 90%",
+  scroller: ".scrollContainer",
+  animation: brandRev,
+  // markers: true,
+  toggleActions: "play none none none",
 });
 
 // let textrev = gsap.timeline();

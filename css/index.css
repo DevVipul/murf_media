@@ -23,14 +23,14 @@
 
 @font-face {
   font-family: "ginger";
-  src: url("../font/EuclidCircular-Regular.otf") format("opentype");
+  src: url("../font/ginger-regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gontham";
-  src: url("../font/GothamMedium.ttf") format("opentype");
+  src: url("../font/MyriadPro-BoldCond.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -197,20 +197,33 @@ html.has-scroll-smooth {
 .section__1 .top {
   font-family: "Gontham";
   font-size: 376px;
-  letter-spacing: -0.15em;
+  letter-spacing: -0.05em;
   font-weight: 300;
   margin-left: 190px;
   margin-top: 85px;
+  color: rgba(0, 0, 0, 0);
   align-self: flex-start;
   justify-self: flex-start;
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
   /* overflow: hidden; */
   white-space: nowrap;
+  margin-inline: auto;
+  /* background-image: url("../img/vigga.png"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.animation__container {
+  width: 100%;
+  height: 100%;
 }
 
 .section__1 .top h1 {
   font-weight: 300;
   /* transform: skewX(-10deg); */
+  text-align: center;
+  display: none;
 }
 
 .section__1 .top span {
@@ -268,18 +281,44 @@ html.has-scroll-smooth {
   height: 1px;
 }
 
-.section__1 .brands_tite h1 {
-  margin-top: 60px;
-  text-align: center;
-  font-weight: normal;
-}
-
 .section__1 .brands {
   font-size: 78px;
   line-height: 1.2em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
+  margin-bottom: 70px;
+}
+
+.section__1 .brands .company {
+  width: 130px;
+}
+
+.section__1 .brands .company img {
+  width: 100%;
+}
+
+.section__1 .small__heading {
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1.32px;
+  line-height: 13.2px;
+  margin-bottom: 17.2px;
+  margin-inline: auto;
+  text-align: center;
+  /* color: var(--foreground-color); */
+  /* margin-top: 200px; */
+}
+
+.section__1 .small__heading__ribbon {
+  height: 7px;
+  width: 24px;
+  background-color: var(--primary-color);
+  transform: skewY(-16deg) scaleX(0);
+  margin-bottom: 39.6px;
+  margin-inline: auto;
+  transform-origin: 0% 0%;
 }
 
 @media only screen and (max-width: 768px) {

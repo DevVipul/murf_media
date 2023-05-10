@@ -34,6 +34,9 @@
   position: absolute;
   width: 55px;
   transform: translateY(-40%);
+  /* background-color: white; */
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .nav__container .nav__bar .logo svg .st1 {
