@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #ffe600;
+  /* --primary-color: #ffe600; */
   --color-light: #000000;
   --text-color: rgb(255, 255, 255);
 }
@@ -161,7 +161,7 @@
 
 .nav__container .gyu {
   position: fixed;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
   left: 50%;
   top: 50%;
   flex-direction: column;
